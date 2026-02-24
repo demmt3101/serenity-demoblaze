@@ -1,0 +1,84 @@
+############################################
+# Maven / Java
+############################################
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Maven Wrapper (no ignorar el jar)
+!.mvn/wrapper/maven-wrapper.jar
+
+# Si tuvieras módulos con target dentro de src (normalmente NO)
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+############################################
+# Serenity / Selenium / Test artifacts
+############################################
+# Si NO quieres versionar reportes (recomendado)
+# target/site/serenity/ ya queda cubierto por target/
+
+# Archivos temporales que a veces quedan
+screenshots/
+logs/
+reports/
+*.har
+
+############################################
+# Kotlin (por si aplica)
+############################################
+.kotlin/
+
+############################################
+# IntelliJ IDEA
+############################################
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+############################################
+# Eclipse
+############################################
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+############################################
+# NetBeans
+############################################
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+############################################
+# VS Code
+############################################
+.vscode/
+
+############################################
+# OS files
+############################################
+.DS_Store
+Thumbs.db
+
+############################################
+# Logs
+############################################
+*.log

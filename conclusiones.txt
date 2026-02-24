@@ -1,0 +1,23 @@
+HALLAZGOS
+1) Demoblaze presenta comportamiento no determinista en UI:
+   - Alerts del navegador al agregar al carrito pueden aparecer con latencia.
+   - El listado de productos puede variar (por lo que se optó por selección estable).
+   Mitigación: se implementó aceptación de alert con reintento y selección de productos de forma estable.
+
+2) Las APIs de Demoblaze responden HTTP 200 tanto para éxito como para error.
+   El criterio correcto de validación es el contenido del body:
+   - Éxito en signup puede devolver body vacío ("")
+   - Error devuelve JSON con "errorMessage"
+   - Login exitoso devuelve string con "Auth_token: ..."
+   Mitigación: validación por texto crudo del body y verificación de presencia/ausencia de "errorMessage".
+
+3) Se identificó un riesgo de encoding en steps con tildes en archivos .feature.
+   Mitigación: se estandarizaron steps sin caracteres especiales (y/o encoding UTF-8).
+
+CONCLUSIONES
+- Se implementó automatización E2E completa del flujo de compra en
+Demoblaze con Serenity + Cucumber, generando evidencia en Serenity Report.
+- Se implementaron pruebas de API para signup/login cubriendo escenarios
+positivos y negativos, con registro de entradas/salidas.
+- La solución prioriza estabilidad y reproducibilidad para ejecución
+local (Maven/IntelliJ) y entrega del ejercicio.
