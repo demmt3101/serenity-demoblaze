@@ -1,23 +1,44 @@
+CONCLUSIONES Y HALLAZGOS – serenity-demoblaze (Serenity BDD + Cucumber + SerenityRest)
+
 HALLAZGOS
 1) Demoblaze presenta comportamiento no determinista en UI:
-   - Alerts del navegador al agregar al carrito pueden aparecer con latencia.
-   - El listado de productos puede variar (por lo que se optó por selección estable).
-   Mitigación: se implementó aceptación de alert con reintento y selección de productos de forma estable.
+   - Los alerts del navegador al agregar al carrito pueden aparecer con latencia.
+   - El listado/catálogo de productos puede variar entre ejecuciones.
+   Mitigación aplicada:
+   - Se implementó aceptación de alert con reintento/espera explícita.
+   - Se optó por una selección de productos estable para reducir flakiness.
 
 2) Las APIs de Demoblaze responden HTTP 200 tanto para éxito como para error.
-   El criterio correcto de validación es el contenido del body:
-   - Éxito en signup puede devolver body vacío ("")
-   - Error devuelve JSON con "errorMessage"
-   - Login exitoso devuelve string con "Auth_token: ..."
-   Mitigación: validación por texto crudo del body y verificación de presencia/ausencia de "errorMessage".
+   Por lo tanto, el criterio correcto de validación es el contenido del body:
+   - Éxito en signup puede devolver body vacío ("").
+   - Error devuelve JSON con "errorMessage".
+   - Login exitoso devuelve string con "Auth_token: ...".
+   Mitigación aplicada:
+   - Validación por contenido del body (texto crudo) y verificación de presencia/ausencia
+   de "errorMessage" y/o "Auth_token".
 
-3) Se identificó un riesgo de encoding en steps con tildes en archivos .feature.
-   Mitigación: se estandarizaron steps sin caracteres especiales (y/o encoding UTF-8).
+3) Riesgo de inconsistencias de encoding (tildes) en steps escritos en archivos .feature.
+   Mitigación aplicada:
+   - Se estandarizaron steps sin caracteres especiales y/o se aseguró encoding UTF-8 para
+   evitar fallos por interpretación de caracteres.
+
+EVIDENCIA DE EJECUCIÓN (Serenity Report)
+- Proyecto: QA Exam Demoblaze
+- Reporte generado: 24-02-2026 03:09:17
+- Total de escenarios ejecutados: 5
+- Resultado: 100% SUCCESS (5/5 passing)
+- Duración total: 16s (min 696ms, max 10s, promedio 3s)
+- Cobertura por feature:
+  * APIs Signup/Login Demoblaze: 4 escenarios, 100% pass
+  * Flujo de compra en Demoblaze: 1 escenario, 100% pass
+- Tags ejecutados: @Api (4) y @E2e (1)
+- Versión de Serenity: Serenity BDD 4.2.0
+- Ruta del reporte: target/site/serenity/index.html
 
 CONCLUSIONES
-- Se implementó automatización E2E completa del flujo de compra en
-Demoblaze con Serenity + Cucumber, generando evidencia en Serenity Report.
-- Se implementaron pruebas de API para signup/login cubriendo escenarios
-positivos y negativos, con registro de entradas/salidas.
-- La solución prioriza estabilidad y reproducibilidad para ejecución
-local (Maven/IntelliJ) y entrega del ejercicio.
+- Se implementó la automatización E2E completa del flujo de compra en Demoblaze usando Serenity + Cucumber,
+generando evidencia en Serenity Report.
+- Se implementaron pruebas de API para signup/login cubriendo escenarios positivos y negativos, con registro
+de entradas/salidas (request/response) mediante SerenityRest/RestAssured.
+- La solución prioriza estabilidad y reproducibilidad para ejecución local (Maven/IntelliJ) mediante
+mitigaciones de flakiness en UI y criterios de aserción basados en el body para APIs que retornan HTTP 200 en errores.
