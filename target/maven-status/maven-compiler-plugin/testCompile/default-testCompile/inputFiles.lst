@@ -1,0 +1,14 @@
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\hooks\CucumberHooks.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\questions\PurchaseConfirmation.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\runners\CucumberTest.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\stepdefinitions\ApiSteps.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\stepdefinitions\PurchaseSteps.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\tasks\AcceptAlertIfPresent.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\tasks\AddProductByIndex.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\tasks\CompletePurchase.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\tasks\NavigateTo.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\tasks\ViewCart.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\ui\CartPage.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\ui\ConfirmationModal.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\ui\HomePage.java
+D:\qa-exam\serenity_bdd\serenity-demoblaze\src\test\java\qa\ui\OrderModal.java

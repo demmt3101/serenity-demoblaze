@@ -1,0 +1,14 @@
+qa\ui\ConfirmationModal.class
+qa\ui\OrderModal.class
+qa\tasks\NavigateTo.class
+qa\ui\CartPage.class
+qa\ui\HomePage.class
+qa\stepdefinitions\PurchaseSteps.class
+qa\hooks\CucumberHooks.class
+qa\questions\PurchaseConfirmation.class
+qa\tasks\CompletePurchase.class
+qa\tasks\ViewCart.class
+qa\stepdefinitions\ApiSteps.class
+qa\tasks\AcceptAlertIfPresent.class
+qa\tasks\AddProductByIndex.class
+qa\runners\CucumberTest.class

@@ -1,0 +1,5 @@
+# Created at 2026-02-24T03:08:53.495
+Boot Manifest-JAR contains absolute paths in classpath 'D:\qa-exam\serenity_bdd\serenity-demoblaze\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+
