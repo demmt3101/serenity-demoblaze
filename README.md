@@ -26,6 +26,7 @@ ui/ → Page Objects (HomePage, CartPage, OrderModal, ConfirmationModal)
 
 target/ (se crea automáticamente)  
 site/serenity/index.html → Reporte Serenity  
+Ruta pública del reporte: https://demmt3101.github.io/serenity-demoblaze/target/site/serenity/index.html
 
 ---
 
